@@ -16,6 +16,8 @@
 
     <modules>
         <module>flywithus-boot</module>
+        <module>payment-api</module>
+        <module>core</module>
     </modules>
 
     <packaging>pom</packaging>
