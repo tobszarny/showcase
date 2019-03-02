@@ -1,4 +1,4 @@
-package com.flywithus.reservations.core;
+package com.flywithus.core;
 
 /**
  * Application Spring profile names for in-code usage
