@@ -56,6 +56,20 @@
             <artifactId>spring-batch-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.flywithus</groupId>
+            <artifactId>core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.flywithus</groupId>
+            <artifactId>payment-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.flywithus</groupId>
+            <artifactId>mock-payment-service</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
     <build>

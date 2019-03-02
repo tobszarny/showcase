@@ -1,4 +1,4 @@
-package com.flywithus.reservations.payment;
+package com.flywithus.payment;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -8,8 +8,6 @@ import java.math.BigDecimal;
 
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.core.IsNot.not;
-
-//import static org.hamcrest.CoreMatchers.*;
 
 public class MockupPaymentServiceTest {
 

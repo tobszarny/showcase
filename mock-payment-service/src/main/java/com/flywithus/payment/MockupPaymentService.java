@@ -1,4 +1,4 @@
-package com.flywithus.reservations.payment;
+package com.flywithus.payment;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
 
-import static com.flywithus.reservations.core.Profile.SANDBOX;
+import static com.flywithus.core.Profile.SANDBOX;
 
 @Service
 @Profile(SANDBOX)
