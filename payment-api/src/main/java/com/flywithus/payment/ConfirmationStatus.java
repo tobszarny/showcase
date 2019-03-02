@@ -1,4 +1,4 @@
-package com.flywithus.reservations.payment;
+package com.flywithus.payment;
 
 /**
  * Merchant payment order confirmation status

@@ -1,4 +1,4 @@
-package com.flywithus.reservations.payment;
+package com.flywithus.payment;
 
 import lombok.Builder;
 import lombok.Getter;
