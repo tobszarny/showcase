@@ -39,5 +39,20 @@ public interface AirportLocationDefinition {
             .aitaCode("WAW")
             .build();
 
+
+    AirportLocation WRO = AirportLocation.builder()
+            .name("Copernicus Wrocław Airport")
+            .city("Wrocław")
+            .country("Poland")
+            .aitaCode("WRO")
+            .build();
+
+    AirportLocation TXL = AirportLocation.builder()
+            .name("Berlin-Tegel Airport")
+            .city("Berlin")
+            .country("Germany")
+            .aitaCode("TXL")
+            .build();
+
     List<AirportLocation> INTERNATIONAL_TRANSIT_AIRPORTS = Arrays.asList(LHR, CDG, MUC, FRA, WAW);
 }

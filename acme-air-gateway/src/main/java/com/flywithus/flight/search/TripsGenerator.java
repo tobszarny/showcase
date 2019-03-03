@@ -66,7 +66,32 @@ public class TripsGenerator {
                     .arrivalTime(departureTime.plus(40 + random.nextInt(60), ChronoUnit.MINUTES))
                     .build());
         } else {
+            LocalDateTime departureTime = generateRandomTimeForDate(date);
+            AirportLocation segmentFrom = from;
+            AirportLocation segmentTo = to;
+            LocalDateTime segmentDepartureTime = departureTime;
+            LocalDateTime segmentArrivalTime;
+            for (AirportLocation connection : connections) {
+                segmentTo = connection;
+                segmentArrivalTime = segmentDepartureTime.plus(40 + random.nextInt(60), ChronoUnit.MINUTES);
+                flights.add(Flight.builder()
+                        .departureLocation(segmentFrom)
+                        .departureTime(segmentDepartureTime)
+                        .destinationLocation(segmentTo)
+                        .arrivalTime(segmentArrivalTime)
+                        .build());
+                segmentFrom = segmentTo;
+                segmentDepartureTime = segmentArrivalTime.plus(40 + random.nextInt(100), ChronoUnit.MINUTES);
+            }
 
+            segmentTo = to;
+            segmentArrivalTime = segmentDepartureTime.plus(40 + random.nextInt(60), ChronoUnit.MINUTES);
+            flights.add(Flight.builder()
+                    .departureLocation(segmentFrom)
+                    .departureTime(segmentDepartureTime)
+                    .destinationLocation(segmentTo)
+                    .arrivalTime(segmentArrivalTime)
+                    .build());
         }
 
         return flights;
