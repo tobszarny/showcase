@@ -6,7 +6,9 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.flywithus.core.Profile.SANDBOX;
 
@@ -23,6 +25,8 @@ public class AcmeBrowser implements Browser {
 
     @Override
     public List<Trip> findTrips(AirportLocation from, AirportLocation to, LocalDate departureDate, LocalDate returnDate) {
-        return generator.generate(from, to, departureDate, returnDate);
+        return generator.generate(from, to, departureDate, returnDate).stream()
+                .sorted(Comparator.comparing(Trip::getPrice))
+                .collect(Collectors.toList());
     }
 }
