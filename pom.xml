@@ -134,6 +134,11 @@
                 <artifactId>user</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.flywithus</groupId>
+                <artifactId>reservation</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
