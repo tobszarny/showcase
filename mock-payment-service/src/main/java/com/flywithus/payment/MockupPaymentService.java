@@ -48,7 +48,8 @@ public class MockupPaymentService implements PaymentGateway {
     }
 
     int nextInt(int from, int to) {
-        return from + (Math.abs(random.nextInt()) % (to - from));
+        return from + random.nextInt(to - from);
+
     }
 
     private String generateTransactionId() {
