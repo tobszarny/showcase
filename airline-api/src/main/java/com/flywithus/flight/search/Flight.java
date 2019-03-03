@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 public class Flight {
     private String flightNumber;
     private String operator;
-    private String departureCity;
+    private AirportLocation departureLocation;
     private LocalDateTime departureTime;
-    private String destinationCity;
+    private AirportLocation destinationLocation;
     private LocalDateTime arrivalTime;
 }
