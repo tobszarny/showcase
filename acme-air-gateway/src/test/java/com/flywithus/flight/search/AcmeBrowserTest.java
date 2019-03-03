@@ -35,7 +35,7 @@ public class AcmeBrowserTest {
         LocalDate departureDate = LocalDate.of(2019, 1, 1);
         LocalDate returnDate = departureDate.plus(3, ChronoUnit.DAYS);
 
-        List<Trip> trips = browser.findTrips(WRO, TXL, departureDate, returnDate);
+        List<Trip> trips = browser.findTrips(WRO, TXL, departureDate, returnDate, 2);
 
         Assert.assertThat(trips, is(not(nullValue())));
         Assert.assertThat(trips, is(not(empty())));

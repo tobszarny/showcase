@@ -9,7 +9,7 @@ import java.util.List;
 public class MockBrowser implements Browser {
 
     @Override
-    public List<Trip> findTrips(AirportLocation from, AirportLocation to, LocalDate departureDate, LocalDate returnDate) {
+    public List<Trip> findTrips(AirportLocation from, AirportLocation to, LocalDate departureDate, LocalDate returnDate, int passengersCount) {
         return null;
     }
 }

@@ -24,7 +24,7 @@ public class BrowserEngine {
         }
 
         return registeredBrowsers.stream()
-                .map(b -> b.findTrips(from, to, departureDate, returnDate))
+                .map(b -> b.findTrips(from, to, departureDate, returnDate, 2))
                 .flatMap(List::stream)
                 .sorted(Comparator.comparing(Trip::getPrice))
                 .collect(Collectors.toList());

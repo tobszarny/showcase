@@ -29,7 +29,7 @@ public class TripsGeneratorTest {
         AirportLocation from = WRO;
         AirportLocation to = TXL;
         LocalDate date = LocalDate.of(2019, 1, 1);
-        List<Flight> flights = tripsGenerator.generateFlights(from, to, date, 0);
+        List<Flight> flights = tripsGenerator.generateFlights(from, to, date, 2, 0);
 
         Assert.assertThat(flights, is(not(nullValue())));
         Assert.assertThat(flights, is(not(empty())));
@@ -41,7 +41,7 @@ public class TripsGeneratorTest {
         AirportLocation from = WRO;
         AirportLocation to = TXL;
         LocalDate date = LocalDate.of(2019, 1, 1);
-        List<Flight> flights = tripsGenerator.generateFlights(from, to, date, 1);
+        List<Flight> flights = tripsGenerator.generateFlights(from, to, date, 2, 1);
 
         Assert.assertThat(flights, is(not(nullValue())));
         Assert.assertThat(flights, is(not(empty())));
