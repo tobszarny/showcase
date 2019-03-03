@@ -1,4 +1,4 @@
-package com.flywithus.reservations;
+package com.flywithus;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
