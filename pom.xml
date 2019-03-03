@@ -19,6 +19,7 @@
         <module>payment-api</module>
         <module>core</module>
         <module>mock-payment-service</module>
+        <module>airline-api</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -115,7 +116,20 @@
                 <artifactId>core</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.flywithus</groupId>
+                <artifactId>airline-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
