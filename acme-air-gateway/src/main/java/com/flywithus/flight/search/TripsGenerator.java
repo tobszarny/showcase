@@ -19,10 +19,15 @@ import static com.flywithus.core.Profile.SANDBOX;
 public class TripsGenerator {
 
     private static final String CURRENCY = "PLN";
+    public static final String OPERATOR = "ACME";
 
     Random random = new Random(System.currentTimeMillis());
 
-    List<Trip> generate(AirportLocation from, AirportLocation to, LocalDate departureDate, LocalDate returnDate, int count) {
+    List<Trip> generate(AirportLocation from, AirportLocation to, LocalDate departureDate, LocalDate returnDate) {
+        return generate(from, to, departureDate, returnDate, 1 + random.nextInt(9));
+    }
+
+    private List<Trip> generate(AirportLocation from, AirportLocation to, LocalDate departureDate, LocalDate returnDate, int count) {
         List<Trip> trips = new ArrayList<>();
 
         for (int i = 0; i < count; i++) {
@@ -33,13 +38,22 @@ public class TripsGenerator {
     }
 
     private Trip generateTrip(AirportLocation from, AirportLocation to, LocalDate departureDate, LocalDate returnDate) {
+        List<Flight> flightsToDestination = generateFlights(from, to, 2, departureDate);
+        List<Flight> returningFlights = generateFlights(to, from, 2, returnDate);
+        int priceOffset = generatePrice(flightsToDestination.size(), returningFlights.size());
+        BigDecimal price = BigDecimal.valueOf(priceOffset + random.nextInt(1200));
         Trip build = Trip.builder()
                 .currency(CURRENCY)
-                .flightsToDestination(generateFlights(from, to, 2, departureDate))
-                .returningFlights(generateFlights(to, from, 2, departureDate))
-                .price(BigDecimal.TEN)
+                .flightsToDestination(flightsToDestination)
+                .returningFlights(returningFlights)
+                .price(price)
                 .build();
         return build;
+    }
+
+    private int generatePrice(int toDestinationSegmentsCount, int fromDestinationSegmentsCount) {
+        // Imaginary algorithm the more connecting flights the cheaper
+        return (400 - toDestinationSegmentsCount * 100) + (400 - fromDestinationSegmentsCount * 100);
     }
 
     private List<Flight> generateFlights(AirportLocation from, AirportLocation to, int maxConnectingFlights, LocalDate date) {
@@ -60,6 +74,7 @@ public class TripsGenerator {
         if (connections.isEmpty()) {
             LocalDateTime departureTime = generateRandomTimeForDate(date);
             flights.add(Flight.builder()
+                    .operator(OPERATOR)
                     .departureLocation(from)
                     .departureTime(departureTime)
                     .destinationLocation(to)
@@ -72,9 +87,10 @@ public class TripsGenerator {
             LocalDateTime segmentDepartureTime = departureTime;
             LocalDateTime segmentArrivalTime;
             for (AirportLocation connection : connections) {
-                segmentTo = connection;
                 segmentArrivalTime = segmentDepartureTime.plus(40 + random.nextInt(60), ChronoUnit.MINUTES);
+                segmentTo = connection;
                 flights.add(Flight.builder()
+                        .operator(OPERATOR)
                         .departureLocation(segmentFrom)
                         .departureTime(segmentDepartureTime)
                         .destinationLocation(segmentTo)
@@ -84,9 +100,10 @@ public class TripsGenerator {
                 segmentDepartureTime = segmentArrivalTime.plus(40 + random.nextInt(100), ChronoUnit.MINUTES);
             }
 
-            segmentTo = to;
             segmentArrivalTime = segmentDepartureTime.plus(40 + random.nextInt(60), ChronoUnit.MINUTES);
+            segmentTo = to;
             flights.add(Flight.builder()
+                    .operator(OPERATOR)
                     .departureLocation(segmentFrom)
                     .departureTime(segmentDepartureTime)
                     .destinationLocation(segmentTo)
