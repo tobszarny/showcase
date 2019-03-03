@@ -18,13 +18,13 @@ public class BrowserEngine {
         this.registeredBrowsers = browsers;
     }
 
-    public List<Trip> findTrips(String fromCity, String toCity, LocalDate departureDate, LocalDate returnDate) {
+    public List<Trip> findTrips(AirportLocation from, AirportLocation to, LocalDate departureDate, LocalDate returnDate) {
         if (registeredBrowsers == null) {
             return Collections.emptyList();
         }
 
         return registeredBrowsers.stream()
-                .map(b -> b.findTrips(fromCity, toCity, departureDate, returnDate))
+                .map(b -> b.findTrips(from, to, departureDate, returnDate))
                 .flatMap(List::stream)
                 .sorted(Comparator.comparing(Trip::getPrice))
                 .collect(Collectors.toList());

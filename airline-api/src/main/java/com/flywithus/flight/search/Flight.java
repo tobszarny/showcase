@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @Getter
 public class Flight {
     private String flightNumber;
+    private String operator;
     private String departureCity;
     private LocalDateTime departureTime;
     private String destinationCity;
