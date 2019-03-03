@@ -21,6 +21,7 @@
         <module>mock-payment-service</module>
         <module>airline-api</module>
         <module>acme-air-gateway</module>
+        <module>user</module>
     </modules>
 
     <packaging>pom</packaging>
