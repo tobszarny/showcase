@@ -4,5 +4,5 @@ package com.flywithus.payment;
  * Merchant payment order confirmation status
  */
 public enum ConfirmationStatus {
-    UNKNOWN, PENDING, DONE
+    UNKNOWN, PENDING, DONE, REJECTED
 }
