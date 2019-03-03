@@ -22,6 +22,7 @@
         <module>airline-api</module>
         <module>acme-air-gateway</module>
         <module>user</module>
+        <module>reservation</module>
     </modules>
 
     <packaging>pom</packaging>
@@ -121,6 +122,16 @@
             <dependency>
                 <groupId>com.flywithus</groupId>
                 <artifactId>airline-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.flywithus</groupId>
+                <artifactId>acme-air-gateway</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.flywithus</groupId>
+                <artifactId>user</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
