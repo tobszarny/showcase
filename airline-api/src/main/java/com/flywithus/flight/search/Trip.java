@@ -15,4 +15,5 @@ public class Trip {
     private List<Flight> returningFlights;
     private BigDecimal price;
     private String currency;
+    private int passengersCount;
 }

@@ -24,8 +24,8 @@ public class AcmeBrowser implements Browser {
     private TripsGenerator generator;
 
     @Override
-    public List<Trip> findTrips(AirportLocation from, AirportLocation to, LocalDate departureDate, LocalDate returnDate) {
-        return generator.generate(from, to, departureDate, returnDate).stream()
+    public List<Trip> findTrips(AirportLocation from, AirportLocation to, LocalDate departureDate, LocalDate returnDate, int passengersCount) {
+        return generator.generate(from, to, departureDate, returnDate, passengersCount).stream()
                 .sorted(Comparator.comparing(Trip::getPrice))
                 .collect(Collectors.toList());
     }

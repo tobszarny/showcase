@@ -16,4 +16,5 @@ public class Flight {
     private LocalDateTime departureTime;
     private AirportLocation destinationLocation;
     private LocalDateTime arrivalTime;
+    private int passengersCount;
 }
