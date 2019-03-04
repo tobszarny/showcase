@@ -23,6 +23,7 @@
         <module>acme-air-gateway</module>
         <module>user</module>
         <module>reservation</module>
+        <module>notification</module>
     </modules>
 
     <packaging>pom</packaging>
