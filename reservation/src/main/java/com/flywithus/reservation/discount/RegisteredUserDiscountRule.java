@@ -1,14 +1,24 @@
 package com.flywithus.reservation.discount;
 
-public class RegisteredUserDiscountRule implements DiscountRule {
+import com.flywithus.reservation.ReservationBasket;
+
+import java.math.BigDecimal;
+
+public class RegisteredUserDiscountRule extends AbstractDiscountRule {
+
+    private static final BigDecimal DISCOUNT = BigDecimal.valueOf(0.05);
 
     @Override
-    public void applyDiscount() {
-
+    protected boolean isApplicable(ReservationBasket basket) {
+        return basket.isUserRegistered();
     }
 
     @Override
-    public DiscountRule nextRule() {
-        return null;
+    public void apply(ReservationBasket basket) {
+        BigDecimal add = basket.calculateTotalAmount();
+        BigDecimal amount = add.multiply(BigDecimal.ONE.subtract(DISCOUNT));
+        basket.setTotal(amount);
     }
+
+
 }

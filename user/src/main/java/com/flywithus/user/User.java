@@ -1,7 +1,10 @@
 package com.flywithus.user;
 
+import lombok.Getter;
+
 import java.time.LocalDate;
 
+@Getter
 public class User {
     private String firstName;
     private String middleName;
