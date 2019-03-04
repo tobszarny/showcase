@@ -44,6 +44,8 @@ public class MockupPaymentService implements PaymentGateway {
         if (!pendingTransactionIds.contains(transactionId)) {
             return ConfirmationStatus.UNKNOWN;
         }
+
+        //TODO: if status is REJECTED OR DONE, don't generate, return former
         return ConfirmationStatus.values()[nextInt(1, ConfirmationStatus.values().length)];
     }
 

@@ -49,4 +49,17 @@ public class TripsGeneratorTest {
 
         flights.forEach(System.out::println);
     }
+
+
+    @Test
+    public void generateTrip_direct_oneway() {
+        AirportLocation from = WRO;
+        AirportLocation to = TXL;
+        LocalDate date = LocalDate.of(2019, 1, 1);
+        Trip trip = tripsGenerator.generateTrip(from, to, date, null, 2);
+
+        Assert.assertThat(trip, is(not(nullValue())));
+        Assert.assertThat(trip.getFlightsToDestination(), is(not(empty())));
+        Assert.assertThat(trip.getReturningFlights(), is(empty()));
+    }
 }

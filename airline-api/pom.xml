@@ -39,8 +39,10 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>com.flywithus</groupId>
+            <artifactId>core</artifactId>
+            <scope>test</scope>
+            <classifier>tests</classifier>
         </dependency>
     </dependencies>
 

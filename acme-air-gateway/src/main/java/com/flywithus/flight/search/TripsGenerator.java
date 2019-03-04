@@ -37,9 +37,12 @@ public class TripsGenerator {
         return trips;
     }
 
-    private Trip generateTrip(AirportLocation from, AirportLocation to, LocalDate departureDate, LocalDate returnDate, int passengersCount) {
+    Trip generateTrip(AirportLocation from, AirportLocation to, LocalDate departureDate, LocalDate returnDate, int passengersCount) {
         List<Flight> flightsToDestination = generateFlights(from, to, 2, departureDate, passengersCount);
-        List<Flight> returningFlights = generateFlights(to, from, 2, returnDate, passengersCount);
+        List<Flight> returningFlights = new ArrayList<>();
+        if (returnDate != null) {
+            returningFlights = generateFlights(to, from, 2, returnDate, passengersCount);
+        }
         int priceOffset = generatePrice(flightsToDestination.size(), returningFlights.size());
         BigDecimal price = BigDecimal.valueOf(passengersCount * (priceOffset + random.nextInt(1200)));
         Trip build = Trip.builder()

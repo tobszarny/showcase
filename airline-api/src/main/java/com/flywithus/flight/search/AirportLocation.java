@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "AirportLocation", schema = "airline_api")
+@Table(name = "AirportLocation", schema = "AIRLINE_API")
 public class AirportLocation {
     @Id
     private String aitaCode;

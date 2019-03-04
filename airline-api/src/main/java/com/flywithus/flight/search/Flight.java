@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Flight", schema = "airline_api")
+@Table(name = "Flight", schema = "AIRLINE_API")
 public class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

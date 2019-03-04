@@ -1,6 +1,6 @@
 package com.flywithus.flight.search;
 
-import com.flywithus.flight.search.configuration.ReservationJpaConfiguration;
+import com.flywithus.flight.search.configuration.AirlineJpaConfiguration;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,7 @@ import static org.hamcrest.core.IsNot.not;
 
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = {ReservationJpaConfiguration.class})
+@ContextConfiguration(classes = {AirlineJpaConfiguration.class})
 @AutoConfigureDataJpa
 @Transactional
 public class AirportLocationStoreTest {

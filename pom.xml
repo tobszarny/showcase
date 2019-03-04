@@ -139,6 +139,12 @@
                 <artifactId>reservation</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.flywithus</groupId>
+                <artifactId>core</artifactId>
+                <version>${project.version}</version>
+                <classifier>tests</classifier>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

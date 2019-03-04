@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Trip", schema = "airline_api")
+@Table(name = "Trip", schema = "AIRLINE_API")
 public class Trip {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
