@@ -15,6 +15,28 @@
             <groupId>com.flywithus</groupId>
             <artifactId>core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.flywithus</groupId>
+            <artifactId>airline-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.flywithus</groupId>
+            <artifactId>acme-air-gateway</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.flywithus</groupId>
+            <artifactId>payment-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.flywithus</groupId>
+            <artifactId>mock-payment-service</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.flywithus</groupId>
+            <artifactId>user</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
