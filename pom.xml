@@ -36,15 +36,14 @@
     </licenses>
 
     <issueManagement>
-        <url>https://github.com/tobszarny/[CHANGE-THIS]/issues</url>
+        <url>https://github.com/tobszarny/showcase/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
 
-    <!--TODO: Once figured the GitHub repository name, update pom.xml -->
     <scm>
-        <url>https://github.com/tobszarny/[CHANGE-THIS]</url>
-        <connection>scm:git:git://github.com/tobszarny/[CHANGE-THIS].git</connection>
-        <developerConnection>scm:git:git@github.com:tobszarny/[CHANGE-THIS].git</developerConnection>
+        <url>https://github.com/tobszarny/showcase</url>
+        <connection>scm:git:git://github.com/tobszarny/showcase.git</connection>
+        <developerConnection>scm:git:git@github.com:tobszarny/showcase.git</developerConnection>
     </scm>
 
     <developers>
