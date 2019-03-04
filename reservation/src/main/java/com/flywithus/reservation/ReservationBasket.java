@@ -2,12 +2,14 @@ package com.flywithus.reservation;
 
 import com.flywithus.flight.search.Trip;
 import com.flywithus.user.User;
+import lombok.Builder;
 import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+@Builder
 @Getter
 public class ReservationBasket {
     private User user;
@@ -25,8 +27,15 @@ public class ReservationBasket {
     }
 
     public BigDecimal calculateTotalAmount() {
-        BigDecimal tripsPrice = trips.stream().map(Trip::getPrice).reduce(BigDecimal::add).get();
-        BigDecimal servicesPrice = extraServices.stream().map(ExtraService::getPrice).reduce(BigDecimal::add).get();
+        BigDecimal tripsPrice = BigDecimal.ZERO;
+        if (trips != null) {
+            tripsPrice = trips.stream().map(Trip::getPrice).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+        }
+
+        BigDecimal servicesPrice = BigDecimal.ZERO;
+        if (extraServices != null) {
+            servicesPrice = extraServices.stream().map(ExtraService::getPrice).reduce(BigDecimal::add).orElse(BigDecimal.ZERO);
+        }
 
         return tripsPrice.add(servicesPrice);
     }

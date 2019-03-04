@@ -9,6 +9,4 @@ public class Payment {
     private String transactionId;
     private BigDecimal amount;
 
-    public Payment() {
-    }
 }
